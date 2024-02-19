@@ -28,24 +28,4 @@ public class RecentlyPlayedStore {
     public List<String> getRecentlyPlayed(String user) {
         return userSongsMap.getOrDefault(user, new LinkedList<>());
     }
-
-    public static void main(String[] args) {
-        RecentlyPlayedStore store = new RecentlyPlayedStore(3);
-
-        // Adding songs played by a user
-        store.addSong("User1", "S1");
-        store.addSong("User1", "S2");
-        store.addSong("User1", "S3");
-
-        System.out.println("Recently played songs by User1: " + store.getRecentlyPlayed("User1"));
-
-        store.addSong("User1", "S4");
-        System.out.println("Recently played songs by User1: " + store.getRecentlyPlayed("User1"));
-
-        store.addSong("User1", "S2");
-        System.out.println("Recently played songs by User1: " + store.getRecentlyPlayed("User1"));
-
-        store.addSong("User1", "S1");
-        System.out.println("Recently played songs by User1: " + store.getRecentlyPlayed("User1"));
-    }
 }
